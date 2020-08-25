@@ -35,9 +35,12 @@ void sieve(int n, int lim)
   for(i=0;i<=n;i++)
   {
     if(num[i] == 1)
+    {
+      cout<<i<<" ";
       fin.push_back(i);
+    }
   }
-  // cout<<endl;
+  cout<<endl;
 
 }
 int main()
@@ -49,7 +52,7 @@ int main()
   sieve(n,lim);
   // for(auto x:fin)
   //   cout<<x<<" ";
-  for(int i=0; i<fin.size(); ++i)
-    std::cout << fin[i] << ' ';
-  cout<<endl;
+  // for(int i=0; i<fin.size(); ++i)
+  //   std::cout << fin[i] << ' ';
+  // cout<<endl;
 }
