@@ -49,6 +49,39 @@ void printList(Node* n)
     }
 }
 
+void swapNodes(Node** head, int x, int y)
+{
+  if(x==y) return;
+  Node* currx = *head, *prevx = NULL;
+
+  while(currx != NULL && currx->key != x)
+  {
+    prevx = currx;
+    currx = currx->next;
+  }
+
+  Node* curry = *head, *prevy = NULL;
+  while(curry != NULL && curry->key != y)
+  {
+    prevy = curry;
+    curry = curry->next;
+  }
+  if(curry == NULL || currx == NULL) return;
+  if (prevx != NULL)
+    prevx->next = curry;
+  else
+      *head = curry;
+
+  if (prevy != NULL)
+      prevy->next = currx;
+  else
+      *head = currx;
+
+  Node* temp = curry->next;
+  curry->next = currx->next;
+  currx->next = temp;
+}
+
 void deleteNode(Node** head, int val){
 
   Node* last = *head;
@@ -85,6 +118,15 @@ Node* reverseLL(Node** head)
   return prev;
 }
 
+int nthNode(Node** head, int n)
+{
+  Node* curr = *head;
+  n--;
+  while(n--)
+    curr=curr->next;
+  return curr->key;
+}
+
 int main()
 {
   int n;
@@ -116,4 +158,22 @@ int main()
   cout<<"\nReversed:"<<endl;
   head = reverseLL(&head);
   printList(head);
+  cout<<"\nEnter nth node\n";
+  cin>>in;
+  if(in>n || n<0) cout<<"Doesnt exist\n";
+  else
+  {
+    if(in == 1)
+      cout<<head->key<<endl;
+    else
+      cout<<nthNode(&head,in)<<endl;
+  }
+
+  cout<<"Enter nodes to swap\n";
+  int sw1, sw2;
+  cin>>sw1;
+  cin>>sw2;
+  swapNodes(&head,sw1,sw2);
+  printList(head);
+  cout<<endl;
 }
