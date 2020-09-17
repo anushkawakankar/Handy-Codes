@@ -127,6 +127,20 @@ int nthNode(Node** head, int n)
   return curr->key;
 }
 
+int detectLoop(Node** head)
+{
+  Node* slow_p = *head;
+  Node* fast_p = *head;
+  while(slow_p && fast_p && fast_p->next)
+  {
+    slow_p = slow_p->next;
+    fast_p = fast_p->next->next;
+    if(slow_p == fast_p)
+        return slow_p->key;
+  }
+  return -1;
+}
+
 int main()
 {
   int n;
@@ -176,4 +190,7 @@ int main()
   swapNodes(&head,sw1,sw2);
   printList(head);
   cout<<endl;
+  head->next->next->next->next = head->next;
+  cout<<"Detect loop"<<endl;
+  cout<<"Loop at: "<<detectLoop(&head)<<endl;
 }
