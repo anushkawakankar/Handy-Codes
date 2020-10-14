@@ -1,2 +1,2 @@
-# Handy_codes
-Codes on the go!
+# Handy codes
+Feel free to use for interview prep lol
