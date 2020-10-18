@@ -7,8 +7,6 @@
 //
 // For "bbbbb" the longest substring is "b", with the length of 1.
 
-
-
 int Solution::lengthOfLongestSubstring(string A) {
     set<int> st;
     int maxLen=INT_MIN;

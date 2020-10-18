@@ -1,3 +1,5 @@
+// given array retturn 1 if two elements exist w diff k
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <bits/stdc++.h>
