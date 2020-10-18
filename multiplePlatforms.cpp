@@ -1,3 +1,5 @@
+// given arr and dep times of n trains, how many platforms reqd minimum
+
 #include <iostream>
 using namespace std;
 #include<stdlib.h>
