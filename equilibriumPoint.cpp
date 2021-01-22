@@ -1,3 +1,5 @@
+// sum of left side = sum of right side
+
 #include <iostream>
 using namespace std;
 
