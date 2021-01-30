@@ -4,10 +4,6 @@
 // Pop O(1) + O(1)
 // delete O(1)
 
-// head - 5,
-// mid - 5,
-// countNode 1,
-
 
 
 Node* push(Node* head, int val)
